@@ -1,0 +1,509 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root {
+    font-family: 'DM Sans', sans-serif;
+    color: #29253c;
+    background: #f7f6fb;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.admin-shell {
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    position: fixed;
+    inset: 0 auto 0 0;
+    padding: 28px 18px;
+    background: #fff;
+    border-right: 1px solid #ebe8f3;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.brand {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 0 8px 38px;
+}
+
+.brand-icon {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    background: #eee9ff;
+    color: #7453c6;
+    border-radius: 14px;
+    font-size: 24px;
+}
+
+.brand strong,
+.sidebar-footer strong {
+    display: block;
+    font-size: 14px;
+}
+
+.brand small,
+.sidebar-footer small {
+    display: block;
+    color: #918ba4;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+.nav-label,
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: #9690a8;
+}
+
+.nav-label {
+    padding-left: 12px;
+    margin-bottom: 12px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    border: 0;
+    background: transparent;
+    padding: 13px 14px;
+    width: 100%;
+    text-align: left;
+    color: #777187;
+    border-radius: 11px;
+    margin: 3px 0;
+    font-size: 13px;
+}
+
+.nav-item span {
+    width: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.nav-item.active {
+    background: #f0ebff;
+    color: #7050bd;
+    font-weight: 700;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    border-top: 1px solid #eeeaf4;
+    padding: 20px 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.avatar {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    background: #e9e2ff;
+    color: #6d4eb8;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.main-panel {
+    margin-left: 250px;
+    padding: 32px 42px;
+    max-width: 1700px;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    font: 800 28px 'Manrope', sans-serif;
+    margin: 7px 0 0;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font: 800 clamp(23px, 3vw, 34px) 'Manrope', sans-serif;
+    line-height: 1.2;
+    letter-spacing: -1.2px;
+    max-width: 490px;
+    margin: 14px 0 12px;
+}
+
+h3 {
+    font: 700 17px 'Manrope', sans-serif;
+    margin-bottom: 7px;
+}
+
+p {
+    color: #898398;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.status {
+    background: white;
+    border: 1px solid #ebe7f3;
+    padding: 9px 13px;
+    border-radius: 30px;
+    font-size: 11px;
+    color: #777187;
+}
+
+.status i {
+    display: inline-block;
+    background: #e6a84f;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+.welcome {
+    background: linear-gradient(115deg, #eee8ff, #f9f4ff 75%, #e5ddff);
+    padding: 34px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 240px;
+    overflow: hidden;
+    position: relative;
+}
+
+.welcome p {
+    margin-bottom: 22px;
+}
+
+.welcome-symbol {
+    font-size: 100px;
+    color: #b6a1ee;
+    opacity: .65;
+    padding: 0 35px;
+}
+
+.primary-btn,
+.secondary-btn,
+.text-btn {
+    border: 0;
+    border-radius: 9px;
+    padding: 11px 16px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.primary-btn {
+    background: #7455c6;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #6243b2;
+}
+
+.secondary-btn {
+    background: #f1eef7;
+    color: #655d77;
+}
+
+.text-btn {
+    background: transparent;
+    color: #7455c6;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+    margin: 22px 0;
+}
+
+.stat-card,
+.content-card {
+    background: #fff;
+    border: 1px solid #eeeaf4;
+    border-radius: 15px;
+}
+
+.stat-card {
+    padding: 20px;
+}
+
+.stat-card>span {
+    display: block;
+    font-size: 11px;
+    color: #898398;
+}
+
+.stat-card>strong {
+    display: block;
+    font: 800 26px 'Manrope', sans-serif;
+    margin: 12px 0 5px;
+}
+
+.stat-card small {
+    color: #a09aac;
+    font-size: 10px;
+}
+
+.stat-card .pending {
+    font-size: 19px;
+    color: #bc8a3c;
+}
+
+.content-card {
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.section-heading p {
+    margin-bottom: 0;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    white-space: nowrap;
+}
+
+th {
+    font-size: 9px;
+    color: #a09aac;
+    letter-spacing: .8px;
+    font-weight: 700;
+    padding: 13px 12px;
+    background: #faf9fc;
+}
+
+td {
+    padding: 17px 12px;
+    border-bottom: 1px solid #f0edf5;
+    color: #827b92;
+    font-size: 11px;
+}
+
+td strong {
+    color: #373148;
+    font-size: 12px;
+}
+
+.pill {
+    border-radius: 20px;
+    padding: 6px 9px;
+    font-size: 10px;
+}
+
+.published {
+    color: #3b8b69;
+    background: #e9f7ef;
+}
+
+.draft {
+    color: #a07835;
+    background: #fff4df;
+}
+
+.notice {
+    margin: 20px 0 0;
+    font-size: 11px;
+}
+
+.prayer-form {
+    background: #faf9fd;
+    border: 1px solid #eeeaf4;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    display: grid;
+    gap: 15px;
+}
+
+.prayer-form label {
+    display: grid;
+    gap: 7px;
+    font-size: 12px;
+    color: #6e667f;
+    font-weight: 600;
+}
+
+.prayer-form input,
+.prayer-form select {
+    padding: 11px;
+    border: 1px solid #e4dfed;
+    border-radius: 8px;
+    background: white;
+    color: #332d43;
+    width: 100%;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.empty-state {
+    background: #faf9fd;
+    border: 1px dashed #ddd5ec;
+    padding: 38px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 22px;
+}
+
+.empty-state>span {
+    display: block;
+    font-size: 35px;
+    color: #886bd0;
+    margin-bottom: 14px;
+}
+
+.empty-state strong {
+    font-size: 13px;
+}
+
+.empty-state p {
+    margin: 9px 0 0;
+}
+
+.settings-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 17px 0;
+    border-bottom: 1px solid #f0edf5;
+    font-size: 12px;
+    color: #898398;
+}
+
+.settings-row strong {
+    color: #524a66;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px 2px;
+    color: #a09aac;
+    font-size: 10px;
+}
+
+@media (max-width: 1100px) {
+    .main-panel {
+        padding: 26px;
+    }
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .welcome-symbol {
+        padding: 0;
+        font-size: 75px;
+    }
+}
+
+@media (max-width: 700px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        padding: 16px;
+    }
+    .brand {
+        padding-bottom: 16px;
+    }
+    .nav-label,
+    .sidebar-footer {
+        display: none;
+    }
+    .sidebar {
+        display: block;
+    }
+    .nav-item {
+        display: inline-flex;
+        width: auto;
+        padding: 10px;
+    }
+    .main-panel {
+        margin-left: 0;
+        padding: 20px 14px;
+    }
+    .topbar {
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .status {
+        font-size: 9px;
+    }
+    .welcome {
+        padding: 23px;
+    }
+    .welcome-symbol {
+        display: none;
+    }
+    .stats {
+        gap: 10px;
+    }
+    .stat-card {
+        padding: 14px;
+    }
+    .content-card {
+        padding: 15px;
+    }
+    footer {
+        flex-direction: column;
+    }
+}
